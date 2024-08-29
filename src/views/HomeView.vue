@@ -6,8 +6,19 @@
   </main>
 </template>
 <script>
+import { fetchListPoke } from '@/api/poke-api';
 import FormCoba from '@/components/FormCoba.vue';
+
 export default {
-  components: { FormCoba }
+  components: { FormCoba },
+  mounted() {
+    this.fetchList()
+  },
+  methods: {
+    // fetch api using axios
+     fetchList(){
+      return fetchListPoke()
+    }
+  }
 }
 </script>
